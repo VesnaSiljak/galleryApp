@@ -1,0 +1,14 @@
+<div class="container-fluid">
+  <h1>Albums</h1>
+  <div class="col-sm-12 row no-margin">
+      <p *ngIf="loading">Loading...</p>
+    <div class="col-lg-3 col-md-6" *ngFor="let album of albumList">
+      
+      <div class="album" [routerLink]="album.id">
+        <img src="{{imgUrl}}">
+        <h2 class="padding-around-10"> {{album.title}} </h2>
+        <p class="padding-around-10"> {{album.name}} </p>
+      </div>
+    </div>
+  </div>
+</div>

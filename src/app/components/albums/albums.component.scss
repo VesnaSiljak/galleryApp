@@ -1,0 +1,39 @@
+.album{
+    width: 100%;
+    background: white;
+    margin-bottom: 45px;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+    -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+    box-shadow: 1px 1px 5px 0px rgba(0,0,0,0.6);
+
+    -webkit-transition: all 0.5s ;
+    -moz-transition: all 0.5s ;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+
+    &:hover{
+        -webkit-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0);
+        -moz-box-shadow: 1px 1px 5px 0px rgba(0,0,0,0);
+        box-shadow: 1px 1px 5px 0px rgba(0,0,0,0);
+        -webkit-transition: all 0.5s ;
+        -moz-transition: all 0.5s ;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+
+    img{
+        width: 100%;
+    }
+
+    h2{
+        font-weight: 500;
+        font-size: 18px;
+        text-transform: uppercase;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+    }
+}

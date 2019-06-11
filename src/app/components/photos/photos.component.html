@@ -1,0 +1,15 @@
+<div class="container-fluid">
+  <button class="back-button" [routerLink]="'/'">Back</button>
+  <h1>Photos</h1>
+  <input [(ngModel)]="searchText" type="text" placeholder="search">
+  <div class="col-sm-12 row no-margin">
+    <p *ngIf="loading">Loading...</p>
+    <div class="col-lg-3 col-md-6" *ngFor="let photo of photosList  | filter:[searchText,'title']">
+      <div class="photo">
+        <img [src]="photo.thumbnailUrl">
+        <h2 class="padding-around-10"> {{photo.title}} </h2>
+        <button (click)="removePhoto(photo.id)">Remove</button>
+      </div>
+    </div>
+  </div>
+</div>

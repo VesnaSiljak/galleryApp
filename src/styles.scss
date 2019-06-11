@@ -1,1 +1,27 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+
+$general_font: 'Montserrat', sans-serif;
+
+/* General styles */
+
+body{
+    font-family: $general_font;
+    background: #e2e2e2;
+}
+h1{
+    font-weight: 500;
+    font-size: 35px;
+    text-align: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.padding-around{
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.padding-around-10{
+    padding: 10px 10px 0;
+}
+.no-margin{
+    margin: 0px;
+}
