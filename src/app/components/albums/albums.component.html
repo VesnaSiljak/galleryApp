@@ -1,13 +1,27 @@
 <div class="container-fluid">
   <h1>Albums</h1>
-  <div class="col-sm-12 row no-margin">
-      <p *ngIf="loading">Loading...</p>
+  <button [class.active]="!isGrid" (click)="isGrid=false" class="switch-button"> List </button>
+  <button [class.active]="isGrid" (click)="isGrid=true" class="switch-button"> Grid </button>
+  <p *ngIf="loading">Loading...</p>
+  <div *ngIf="isGrid" class="col-sm-12 row no-margin">
+
     <div class="col-lg-3 col-md-6" *ngFor="let album of albumList">
-      
+
       <div class="album" [routerLink]="album.id">
         <img src="{{imgUrl}}">
         <h2 class="padding-around-10"> {{album.title}} </h2>
         <p class="padding-around-10"> {{album.name}} </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isGrid" class="col-sm-12 row no-margin">
+    <div class="list" *ngFor="let album of albumList">
+      <div class="album row" [routerLink]="album.id">
+        <img class="col-sm-2" src="{{imgUrl}}">
+        <div class="col-sm-10">
+          <h2 class="padding-around-10"> {{album.title}} </h2>
+          <p class="padding-around-10"> {{album.name}} </p>
+        </div>
       </div>
     </div>
   </div>

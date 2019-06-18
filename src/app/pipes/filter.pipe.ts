@@ -4,9 +4,9 @@ import { PipeTransform, Pipe } from '@angular/core';
     name: 'filter'
 })
 export class FilterPipe implements PipeTransform {
-    transform(items: any[], args:any[]): any[] {
-      var searchText = args[0];
-      var searchBy = args[1];
+    transform(items: any[], args: any[]): any[] {
+        let searchText = args[0];
+        let searchBy = args[1];
         if (!items || !searchText) {
             return items;
         }

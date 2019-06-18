@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UsersService {
 
-  apiUrl: string = "https://jsonplaceholder.typicode.com/users/"
+  apiUrl: string = 'https://jsonplaceholder.typicode.com/users/';
 
-  constructor( private http : HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-  getUser(id){
+  getUser(id) {
     return this.http.get(this.apiUrl + id);
   }
 }

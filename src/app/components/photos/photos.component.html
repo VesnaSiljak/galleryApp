@@ -1,14 +1,28 @@
 <div class="container-fluid">
   <button class="back-button" [routerLink]="'/'">Back</button>
   <h1>Photos</h1>
+  <button [class.active]="!isGrid" (click)="isGrid=false" class="switch-button"> List </button>
+  <button [class.active]="isGrid" (click)="isGrid=true" class="switch-button"> Grid </button>
   <input [(ngModel)]="searchText" type="text" placeholder="search">
-  <div class="col-sm-12 row no-margin">
-    <p *ngIf="loading">Loading...</p>
+  <p *ngIf="loading">Loading...</p>
+  <div *ngIf="isGrid" class="col-sm-12 row no-margin">
+
     <div class="col-lg-3 col-md-6" *ngFor="let photo of photosList  | filter:[searchText,'title']">
       <div class="photo">
         <img [src]="photo.thumbnailUrl">
         <h2 class="padding-around-10"> {{photo.title}} </h2>
         <button (click)="removePhoto(photo.id)">Remove</button>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="!isGrid" class="col-sm-12 row no-margin">
+    <div class="list" *ngFor="let photo of photosList  | filter:[searchText,'title']">
+      <div class="photo row">
+        <img class="col-sm-2" [src]="photo.thumbnailUrl">
+        <div class="col-sm-10">
+          <h2 class="padding-around-10"> {{photo.title}} </h2>
+          <button (click)="removePhoto(photo.id)" class="align-left">Remove</button>
+        </div>
       </div>
     </div>
   </div>

@@ -6,10 +6,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class PhotosService {
 
-  apiUrl: string = "https://jsonplaceholder.typicode.com/albums/"
-  constructor(private http:HttpClient) { }
+  apiUrl = 'https://jsonplaceholder.typicode.com/albums/';
+  constructor(private http: HttpClient) { }
 
-  getPhotos(id){
-    return this.http.get(this.apiUrl + id + "/photos");
+  getPhotos(id) {
+    return this.http.get(this.apiUrl + id + '/photos');
+  }
+
+  deletePhoto(id) {
+    this.http.delete(id);
   }
 }

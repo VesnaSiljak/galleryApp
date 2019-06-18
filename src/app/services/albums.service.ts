@@ -6,11 +6,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AlbumsService {
 
-  apiUrl: string = "https://jsonplaceholder.typicode.com/albums";
+  apiUrl: string = 'https://jsonplaceholder.typicode.com/albums';
 
-  constructor( private http: HttpClient ) { }
+  constructor(private http: HttpClient) { }
 
-  getAlbums(){
-    return this.http.get(this.apiUrl)
+  getAlbums() {
+    return this.http.get(this.apiUrl);
   }
 }

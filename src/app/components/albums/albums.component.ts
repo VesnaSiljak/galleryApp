@@ -13,28 +13,27 @@ export class AlbumsComponent implements OnInit {
 
   albumList: Album[];
   imgUrl: string;
-  loading:boolean;
+  loading: boolean;
+  isGrid: boolean;
   constructor(private albumService: AlbumsService, private usersService: UsersService) { }
 
   ngOnInit() {
-    this.loading=true;
-    this.imgUrl = "https://via.placeholder.com/600x350/24f355"
+    this.isGrid = false;
+    this.loading = true;
+    this.imgUrl = 'https://via.placeholder.com/600x350/24f355';
     this.albumService.getAlbums().subscribe(
       (data: Album[]) => {
         this.albumList = data;
-        this.loading=false;
+        this.loading = false;
 
         for (let i = 0; i < this.albumList.length; i++) {
           this.usersService.getUser(this.albumList[i].userId).subscribe(
             (data: User) => {
               this.albumList[i].name = data.name;
             }
-          )
+          );
         }
       }
-    )
-
+    );
   }
-
-
 }
